@@ -1,0 +1,7 @@
+<div class="container w-50 pt-5 pb-5 bg-light">
+  <h1 class="pb-4">Restaurants</h1>
+  <p><%= link_to 'Add new restaurant', new_restaurant_path, class: "btn btn-dark border w-100 mt-3 text-white text-left" %></p>
+  <% @restaurants.each do |restaurant| %>
+    <p class="p-2 bg-white rounded"><%= link_to restaurant.name, restaurant_path(restaurant.id), :class => "text-dark" %></p>
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+<div class="container w-50 pt-5 mt-4 border rounded pb-5 bg-light">
+  <h1 class="pb-4"><%= @restaurant.name %></h1>
+  <p class="p-2 bg-white rounded text-dark">Cuisine: <%= @restaurant.category %></p>
+  <p class="p-2 bg-white rounded text-dark">Address: <%= @restaurant.address %></p>
+  <p class="p-2 bg-white rounded text-dark">Phone number: <%= @restaurant.phone_number %></p>
+  <br>
+  <h4>Reviews</h4>
+  <br>
+  <% @restaurant.reviews.each do |review| %>
+    <p class="p-2 bg-white rounded text-dark"><%= review.rating %> - <%= review.content %></p>
+  <% end %>
+  <%= link_to 'Edit', edit_restaurant_path, class: "btn btn-dark" %>
+  <%= link_to 'Review', new_restaurant_review_path(@restaurant), class: "btn btn-dark" %>
+  <%= link_to 'Home', restaurants_path, class: "btn btn-dark" %>
+</div>
